@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Liên hệ</title>
+        <link rel="shortcut icon" href="images/favicon.ico"
+                type="image/vnd.microsoftt.icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" ></script>
+        <script>
+            window.onload=function(){
+                showSearch();
+            };
+        </script>
+       
+        <script>
+            window.onstorage = () => {
+            showCart();
+            };
+        </script>
+    </head>
+    <body>
+        <!--header-->
+        <header>
+            <img id="header-img1" src="images/header-img1.png" alt="">
+            <img id="header-img2" src="images/header-img2.png" alt="">
+            <img id="header-img3" src="images/header-img3.png" alt="">
+            <a href="trangchu.html"><img id="logo" src="images/logo.png" width="15%"></a>
+            <!--nav-->
+            <nav>
+                <a href="trangchu.html">Trang Chủ </a> 
+                <a href="gioithieu.html">Giới Thiệu </a> 
+                <a href="sanpham.html">Sản Phẩm </a> 
+                <a href="tintuc.html">Tin Tức </a> 
+                <a href="dangnhap.html">Đăng Nhập </a> 
+                <a href="dangky.html">Đăng Ký </a> 
+                <a href="lienhe.html">Liên Hệ </a> 
+                <div class="search">
+                    <form method="get" name="frm-search" action="timkiem.html">
+                        <div id="input-container">
+                            <input id="search" class="saerch-input" type="text" placeholder="Nhập nội dung cần tìm" name="words" onkeypress="checkKeySearch(e)">
+                            <i class="fa fa-search icon-white" onclick="doSearch()" ></i>
+                            <i class="fa fa-shopping-cart icon-pink" onclick="openCart()"></i>
+                         
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--main-->
+        <main>
+
+            <!--article-->
+            <article>
+                <h1>Liên Hệ</h1>
+
+                
+                <p><img  src="images/lienhe/check-in.png" width="10px ">
+                    <b>Địa Chỉ: 0123, Toà Nhà ABC, TP Cần Thơ</b>
+                    Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới.
+                    Xin cảm ơn.
+                </p>
+                <h1>Góp Ý</h1>
+                <div id="lienhe">
+                    
+                    <div id="lienhe">
+                    <form method="POST" enctype="multipart/x-www-form-urlencoded">
+                        <table>
+                            <tr>
+                                   <td><i class="fas fa-user-alt"></i></td>
+                                <td>
+                                    
+                                    <input type="text" size="25" id="hoten" name="hoten" placeholder="Vui lòng nhập Họ tên của bạn">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>  <i class="fas fa-envelope"></i> </td>
+                                <td><input type="text" size="25" id="email" name="email" placeholder="Vui lòng nhập địa chỉ Email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <i class="fas fa-list"></i></td>
+                                <td><select size="1">
+                                        <option>Về Sản Phẩm/Dịch Vụ</option>
+                                        <option>Về Ưu Đãi Thành Viên</option>
+                                        <option>Về Tin Tuyển Dụng</option>
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <td> <i class="fas fa-file"></i></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea rows="7" cols="50" id="nd" placeholder="Nội dung cần liên hệ"> </textarea>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2"> <input type="submit" value="Gửi" onclick="checklh()"></td>
+                            </tr>
+                        </table>
+                    </form>
+                    </div>
+              </div>
+            </article>
+        </main>
+
+        <!--footer-->
+        <footer>
+            <p>
+                &copy; 2021 Bản quyền thuộc về FreeezeVN. 
+                <b>
+                    <a href="#" class="social-icon "><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa  fa-twitter-square"></i></a> 
+                    <a href="#" class="social-icon"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#logo" class="gotop"> <img src="images/top.png" alt="" width="60"></a>
+                </b>
+            </p>
+        </footer>
+    </body>
+</html>

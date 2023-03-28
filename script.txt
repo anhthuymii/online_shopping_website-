@@ -1,0 +1,248 @@
+// Tìm kiếm*************************************************************************************************************************
+function checkKeySearch(e){
+    var key=event.which ||event.keyCode;
+    if(key == 32){
+        doSearch();
+    }
+}
+function doSearch(){
+    var frm=document.forms["frm-search"];
+    if(frm.words.value.length>0)
+        frm.submit();
+}
+
+
+ // Đăng ký*************************************************************************************************************************   
+function checkdk() { 
+    var email = document.getElementById('email').value; 
+    var password= document.getElementById('password').value;
+    var password1= document.getElementById('password1').value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    if(email=='' && password=='' && password1=='')
+        alert('Vui lòng nhập email và password !')
+    if (!filter.test(email) || email =='') { 
+        alert('Email không hợp lệ.');
+        email.focus; 
+        return false; 
+    }
+    else if (password=='' || password.length < 8){
+        alert('Password không hợp lệ.');
+        return false; 
+    }
+    else if (password1=='' || password.length < 8 || password1 != password){
+        alert('Password không khớp.');
+        return false; 
+    }
+    else
+        alert('OK. Đăng ký thành công.'); 
+} 
+
+//Đăng nhập*************************************************************************************************************************
+function checkdn() { 
+    var email = document.getElementById('email').value; 
+    var password= document.getElementById('password').value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    if(email=='' && password=='')
+        alert('Vui lòng nhập email và password !')
+    if (!filter.test(email) || email =='') { 
+        alert('Email không hợp lệ.');
+        email.focus; 
+        return false; 
+    }
+    if (password=='' || password.length < 8){
+        alert('Password không hợp lệ.');
+        return false; 
+    }
+    else
+        alert('OK. Đã gửi dữ liệu.'); 
+} 
+//Liên hệ *************************************************************************************************************************
+function checklh() { 
+    var email = document.getElementById('email').value; 
+    var hoten= document.getElementById('hoten').value;
+    var nd= document.getElementById('nd').value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    if(email=='' && hoten=='' && nd=='')
+        alert('Vui lòng nhập thông tin !');
+    else if (!filter.test(email) || email =='') { 
+        alert('Email không hợp lệ.');
+        email.focus; 
+        return false; 
+    }
+    else if (hoten=='' || hoten.length < 4){
+        alert('Họ và tên không hợp lệ.');
+        return false; 
+    }
+    else if (nd=='' || nd.length < 10){
+        alert('Nội dung không hợp lệ.');
+        return false; 
+    }
+    else
+        alert('Đã gửi nội dung thành công!!'); 
+} 
+//Sản phẩm *************************************************************************************************************************
+
+var itemList={
+"sp001":{"name":"Sữa Chua Vị Kiwi",
+        "price":21000,
+        "photo":"images/sanpham/kiwi.jpg"},
+"sp002":{"name":"Sữa Chua Vị Xoài",
+        "price":22000,
+        "photo":"images/sanpham/mango.jpg"},
+"sp003":{"name":"Sữa Chua Vị Dưa Lưới",
+        "price":23000,
+        "photo":"images/sanpham/cantaloupe.jpg"},
+"sp004":{"name":"Sữa Chua Vị Mân Xôi",
+        "price":24000,
+        "photo":"images/sanpham/blackberry.jpg"},
+"sp005":{"name":"Sữa Chua Vị Dâu Tây",
+        "price":25000,
+        "photo":"images/sanpham/strawbberry.jpg"},
+"sp006":{"name":"Sữa Chua Vị Việt Quất",
+        "price":26000,
+        "photo":"images/sanpham/blueberry.jpg"},
+"sp007":{"name":"Sữa Chua Vị Bưởi",
+        "price":27000,
+        "photo":"images/sanpham/grapes.jpg"},
+"sp008":{"name":"Sữa Chua Vị Táo Xanh",
+        "price":28000,
+        "photo":"images/sanpham/green-apple.jpg"},
+"sp009":{"name":"Sữa Chua Vị Dứa",
+        "price":29000,
+        "photo":"images/sanpham/pineapple.jpg"},
+};
+function addCart(code)
+{
+    var name=itemList[code].name;
+    var number= parseInt(document.getElementById(code).value);
+    if(number>100){
+            alert('Mỗi mặt hàng chỉ có thể đặt 100 sản phẩm cho mỗi đơn hàng. Bạn đã vượt qua số lượng có thể đặt hàng!');
+            return;
+        }
+    if(typeof localStorage[code] == "undefined"){
+        window.localStorage.setItem(code,number);   
+    }
+    else if(number=='' || number==0)
+        alert('Vui lòng nhập số lượng!!!');
+        
+    else{
+        var current= parseInt(window.localStorage.getItem(code));
+        if(number+current >100){
+            window.localStorage.setItem(code,100);
+            alert('Mỗi mặt hàng chỉ có thể đặt 100 sản phẩm cho mỗi đơn hàng. Bạn đã vượt qua số lượng có thể đặt hàng!');
+            return;
+        }else
+            window.localStorage.setItem(code,number+current);
+            alert('Đã cập nhật '+number+' sản phẩm '+name+' vào giỏ hàng. Số lượng sản phẩm '+name+' hiện có trong giỏ hàng là '+(number+current));
+    }
+    
+}
+
+// Thêm vào giỏ hàng
+window.onstorage = () => {
+    showCart();
+}; 
+var A=0;
+var table= '<table border="1" id="tablecart" width="100%">'+
+        '<thead>'+
+            '<tr>'+
+                '<th>Hình SP</th>'+
+                '<th>Tên SP</th>'+
+                '<th>Số Lượng</th>'+
+                '<th>Giá</th>'+
+                '<th>Thành Tiền</th>'+
+                '<th> </th></tr>'+
+        '</thead>'+
+        '<tbody id="cartDetail" >'+
+            '<tr>'+
+                
+            '</tr>'+
+        '</tbody>'+
+        '<tfoot>'+
+            '<tr>'+
+                '<td colspan="6" style="text-align:right;">Tổng thành tiền (A) = <span id="AA"></span></td>'+
+            '</tr>'+
+            '<tr>'+ 
+                '<td colspan="6" style="text-align:right;">Chiết Khấu (B) = 0.1 x (A) = <span id="BB"></span></td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td colspan="6" style="text-align:right;">Thuế (C) = 10% x (A-B) = <span id="CC"></span></td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td colspan="6" style="text-align:right;">Tổng đơn hàng = A-B+C = <span id="DD"></span></td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td colspan="6" style="text-align:center;"><button id="thanhtien" onclick="tong();" type="button">Xác Nhận Đơn Hàng</button></td>'+
+            '</tr>'
+        '</tfoot>'+
+        '</table><br>';
+    document.getElementById('database').innerHTML=table; 
+
+function openCart(){
+    window.location.href="donhang.html";
+}
+
+function showCart(){
+    var A=0, B=0,C=0, D=0;
+    
+    if(localStorage.length != 0){
+        for(var key in localStorage) {/// id:sp001 ==> gia tri: so luong =10
+            var item = itemList[key]; //thông tin sp
+            var photo = item.photo;         // hình sp
+            var name = item.name;           // tên sp
+            var price = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price);         // giá sp
+            var number= localStorage.getItem(key); // Số lượng dặt hàng
+            var temp = item.price*number; // sử dụng số để tính toán
+            var thanhtien=Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price*number); //định dạng để in ra
+
+            A = A + temp;
+            document.getElementById('AA').innerHTML=Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(A);
+            B= getDiscountRate() *A;
+            document.getElementById('BB').innerHTML=Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(B);
+            C =0.1*(A-B);
+            document.getElementById('CC').innerHTML=Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(C);
+            D=A-B+C;
+            document.getElementById('DD').innerHTML=Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(D);
+            var tbody = 
+                '<tr >'+
+                    '<td width ="100px">'+'<img src='+photo+'></td>'+
+                    '<td >'+name+'</td>'+
+                    '<td style="text-align:right">'+number+'</td>'+
+                    '<td style="text-align:right">'+price+'</td>'+
+                    '<td style="text-align:right">'+thanhtien+'</td>'+
+                    '<td style="text-align:center" ><a data-code="'+key+'" href="#"><i onclick="removeCart(\''+key+'\')" class="fa fa-trash icon-pink" ></i></a></td>'+
+                '</tr>';
+        
+            document.getElementById("tablecart").insertRow(1).innerHTML = tbody;
+        };
+    }
+    
+}
+function getDiscountRate()
+{
+    var d=new Date();//lấy ngày hiện tại của máy tính 
+    var weekday=d.getDay();//lấy ngày trong tuần 
+    var totalMins=d.getHours()*60+d.getMinutes();//đổi thời gian hiện tại ra số phút tương đối trong ngày 
+    if(weekday>=1&&weekday<=3&&((totalMins>=420&&totalMins<=660)||(totalMins>=780&&totalMins<=1020)))
+        return 0.1;
+        return 0;
+}
+function removeCart(code) 
+{ 
+        if(typeof window.localStorage[code] !== "undefined")
+         {
+         //xóa sản phẩm khỏi localStorage 
+         window.localStorage.removeItem(code);
+         //Xóa nội dung của phần thân của bảng (<tbody>)
+         //document.getElementById("cartDetail").getElementsByTagName('tbody')[0].innerHTML="";
+         //Hiển thị lại nội dung chi tiết của đơn hàng 
+         location.reload();
+         }
+}
+
+/*Hiển thị nội dung keywords********************************************/
+function showSearch(){
+    var url = new URL(window.location);
+    var ws = url.searchParams.get("words");
+    document.getElementById("searchDetail").innerHTML="<h1>Từ khoá tìm kiếm</h1> <b>" +ws+"</b>";
+}

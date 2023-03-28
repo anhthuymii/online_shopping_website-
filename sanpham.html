@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sản Phẩm</title>
+        <link rel="shortcut icon" href="images/favicon.ico"
+              type="image/vnd.microsoftt.icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="styles.css">
+        
+        <script>
+            window.onload=function(){
+                showSearch();
+            };
+        </script>
+        
+    </head>
+    <body onload="showCart();">
+
+        <!--header-->
+        <header>
+            <img id="header-img1" src="images/header-img1.png" alt="">
+            <img id="header-img2" src="images/header-img2.png" alt="">
+            <img id="header-img3" src="images/header-img3.png" alt="">
+            <a href="trangchu.html"><img id="logo" src="images/logo.png" width="15%"></a>
+            <!--nav-->
+            <nav>
+                <a href="trangchu.html">Trang Chủ </a> 
+                <a href="gioithieu.html">Giới Thiệu </a> 
+                <a href="sanpham.html">Sản Phẩm </a> 
+                <a href="tintuc.html">Tin Tức </a> 
+                <a href="dangnhap.html">Đăng Nhập </a> 
+                <a href="dangky.html">Đăng Ký </a> 
+                <a href="lienhe.html">Liên Hệ </a> 
+                <div class="search">
+                    <form method="get" name="frm-search" action="timkiem.html">
+                        <div id="input-container">
+                            <input id="search" class="saerch-input" type="text" placeholder="Nhập nội dung cần tìm" name="words" onkeypress="checkKeySearch(e)">
+                            <i class="fa fa-search icon-white" onclick="doSearch()" ></i>
+                            <i class="fa fa-shopping-cart icon-pink" onclick="openCart()"></i>
+                         
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+
+        <!--main-->
+        <main >
+
+            <!--article-->
+            <article>
+                <h1>Sản Phẩm Truyền Thống</h1>
+                <!--section 1-->
+
+                <section class="cungloai">
+                    <div class="sanpham">
+                        <img src="images/sanpham/kiwi.jpg" >
+                        <h2>Sữa chua Vị Kiwi</h2>
+                        <p>Hương vị thơm ngon của trái Kiwi xanh, nổi tiếng của đất nước New Zealand có trong Sữa chua vị Kiwi
+                        xanh đem đến một món ăn nhẹ Siêu ngon và tốt cho hệ tiêu hóa. <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp001" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp001')">Đặt hàng</button></p>
+                            </span>
+                    </div>
+              
+
+              
+                    <div class="sanpham"><img src="images/sanpham/mango.jpg" >
+                        <h2>Sữa chua Vị Xoài</h2>
+                        <p>Sữa chua xoài thích hợp cho mọi lứa tuổi, vì vậy hãy để cả gia đình quây quần bên nhau cùng thưởng
+                        thức món ăn thơm ngon, bổ dưỡng này. <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp002" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp002')">Đặt hàng</button></p>
+                            </span></div>
+        
+
+                    <div class="sanpham">
+                    <img src="images/sanpham/cantaloupe.jpg" >
+                    <h2>Sữa chua Vị Dưa Lưới</h2>
+                    <p>Trong dưa lưới chứa rất nhiều vitamin C có tác dụng làm đẹp da hiệu quả. Phụ nữ ăn sinh tố dưa lưới
+                        thường xuyên sẽ có làn da mịn màng. <a href="#">Xem chi tiết</a> 
+                        <label for="soluong" ></label>Số Lượng:
+                        <span>
+                            <input type="number" id="sp003" min="0" max="100" size="3" value="0">
+                            <button onclick="addCart('sp003')">Đặt hàng</button></p>
+                        </span>
+                    </div>
+                </section>
+
+                <h1>Sản Phẩm mới</h1>
+                <!--section 2-->
+                <section class="cungloai">
+                    <div class="sanpham">
+                        <img src="images/sanpham/blackberry.jpg" >
+                        <h2>Sữa chua Vị Mâm Xôi</h2>
+                        <p>Quả mâm xôi là loại quả ăn họ hoa hồng, có nguồn gốc từ châu Âu, Bắc Á và được trồng ở các vùng ôn
+                            đới trên toàn thế giới. Có nhiều loại, bao gồm đen, tím và vàng <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp004" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp004')">Đặt hàng</button></p>
+                            </span></div>
+         
+                 
+              
+                   <div class="sanpham">
+                    <img src="images/sanpham/strawberry.jpg" >
+                    <h2>Sữa chua Vị Dâu Tây</h2>
+                    <p>Dâu tây là một loài cây thân thảo có thân ngắn và các chiếc lá mọc gần với nhau. Lá có nhiều gai, bề mặt
+                        lá có nhiều lông tơ và kích thước lá có thể khác nhau ở từng giống <a href="#">Xem chi tiết</a> 
+                        <label for="soluong" ></label>Số Lượng:
+                        <span>
+                            <input type="number" id="sp005" min="0" max="100" size="3" value="0">
+                            <button onclick="addCart('sp005')">Đặt hàng</button></p>
+                        </span>
+                   </div>
+     
+
+           
+                    <div class="sanpham">
+                        <img src="images/sanpham/blueberry.jpg" >
+                    <h2>Sữa chua Vị Việt Quất</h2>
+                    <p>Quả việt quất chứa các dưỡng chất tốt cho sức khỏe như chất xơ, kali, folate, vitamin C và vitamin B6
+                        (những chất hỗ trợ rất tốt cho sức khỏe của tim) <a href="#">Xem chi tiết</a> 
+                        <label for="soluong" ></label>Số Lượng:
+                        <span>
+                            <input type="number" id="sp006" min="0" max="100" size="3" value="0">
+                            <button onclick="addCart('sp006')">Đặt hàng</button></p>
+                        </span>
+                    </div>
+                </section>
+
+                <!--section 3-->
+                <h1>Sản phẩm trái cây nhiệt đới</h1>
+                <section class="cungloai">
+                    <div class="sanpham">
+                        <img src="images/sanpham/grapes.jpg" >
+                        <h2>Sữa chua Vị Bưởi</h2>
+                        <p>Bưởi là một loại quả thuộc chi Cam chanh có nguồn gốc từ Đông Nam Á. Bưởi tiếng Anh gọi là Pomelo,
+                            tuy nhiên nhiều từ điển ở Việt Nam lại dịch thành grapefruit <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp007" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp007')">Đặt hàng</button></p>
+                            </span></div>
+              
+                    <div class="sanpham">
+                        <img src="images/sanpham/green-apple.jpg" >
+                        <h2>Sữa chua Vị Táo Xanh</h2>
+                        <p>Táo xanh có hàm lượng chất xơ cao giúp tăng cường quá trình trao đổi chất của cơ thể. Bên cạnh đó,
+                            chất xơ còn giúp quá trình giải độc gan và hệ tiêu hóa <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp008" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp008')">Đặt hàng</button></p>
+                            </span>
+                    </div>
+    
+              
+                    <div class="sanpham">
+                        <img src="images/sanpham/pineapple.jpg" >
+                        <h2>Sữa chua Vị Dứa</h2>
+                        <p>Dứa có các tên gọi khác như là khóm, thơm, khớm, gai hoặc huyền nương. Đây là một loại quả nhiệt đới.
+                            Dứa là cây bản địa của các nước Nam Mỹ. <a href="#">Xem chi tiết</a> 
+                            <label for="soluong" ></label>Số Lượng:
+                            <span>
+                                <input type="number" id="sp009" min="0" max="100" size="3" value="0">
+                                <button onclick="addCart('sp009')">Đặt hàng</button></p>
+                            </span>
+                    </div>
+                </section>
+                        
+            </article>
+        </main>
+
+        <!--footer-->
+        <footer>
+            <p>
+                &copy; 2021 Bản quyền thuộc về FreeezeVN. 
+                <b>
+                    <a href="#" class="social-icon "><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa  fa-twitter-square"></i></a> 
+                    <a href="#" class="social-icon"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#logo" class="gotop"> <img src="images/top.png" alt="" width="60"></a>
+                </b>
+            </p>
+        </footer>
+        <script src="script.js" ></script>
+        <script>
+            window.onstorage = () => {
+            showCart();
+            };
+        </script>
+    </body>
+</html>

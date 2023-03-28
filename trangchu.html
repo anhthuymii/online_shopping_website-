@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Trang chủ</title>
+        <link rel="shortcut icon" href="images/favicon.ico"
+                type="image/vnd.microsoftt.icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script.js" ></script>
+        <script>
+            window.onload=function(){
+                showSearch();
+            };
+        </script>
+        <script>
+            window.onstorage = () => {
+            showCart();
+            };
+        </script>
+        
+    </head>
+    <body>
+        
+        <!--header-->
+        <header>
+            <img id="header-img1" src="images/header-img1.png" alt="">
+            <img id="header-img2" src="images/header-img2.png" alt="">
+            <img id="header-img3" src="images/header-img3.png" alt="">
+            <a href="trangchu.html"><img id="logo" src="images/logo.png" width="15%"></a>
+            <!--nav-->
+            <nav>
+                <a href="trangchu.html">Trang Chủ </a> 
+                <a href="gioithieu.html">Giới Thiệu </a> 
+                <a href="sanpham.html">Sản Phẩm </a> 
+                <a href="tintuc.html">Tin Tức </a> 
+                <a href="dangnhap.html">Đăng Nhập </a> 
+                <a href="dangky.html">Đăng Ký </a> 
+                <a href="lienhe.html">Liên Hệ </a> 
+                <div class="search">
+                    <form method="get" name="frm-search" action="timkiem.html">
+                        <div id="input-container">
+                            <input id="search" class="saerch-input" type="text" placeholder="Nhập nội dung cần tìm" name="words" onkeypress="checkKeySearch(e)">
+                            <i class="fa fa-search icon-white" onclick="doSearch()" ></i>
+                            <i class="fa fa-shopping-cart icon-pink" onclick="openCart()"></i>
+                         
+                        </div>
+                    </form>
+                </div>
+            </nav>
+          
+        </header>
+
+        <!--main-->
+        <main class="one-cols" onload="init()">
+            <!--article-->
+            <article class="main-content">
+                <div id="headline">
+                
+                <img src="images/trangchu/bg-home.jpg"></div>
+                <h1>Sản Phẩm Mới</h1>
+
+                <!--section 1-->
+                <section class="image-left">
+                    <h2>Sữa chua tốt cho sức khoẻ</h2>
+                    <img class="round-figure" src="images/trangchu/yogurt.jpg">
+                    <p class="detail">Sữa chua là một loại thực phẩm được tạo ra từ quá trình lên men sữa của các vi khuẩn. Hầu hết các loại
+                        sữa đều có thể dùng làm sữa chua, tuy nhiên sữa bò là được dùng nhiều hơn hết. Sữa chua hay được
+                        gọi là yaourt (là da-ua). Chúng được lên men từ sữa động vật nhờ vi khuẩn lactic, đã được khử chất béo
+                        và thanh trùng ở nhiệt độ 80 - 90 độ C.Sữa chua có 2 loại cơ bản là sữa chua có đường và sữa chua
+                        không đường. Bên cạnh đó còn có loại sữa chua uống, sữa chua men sống. Váng sữa thường được chia
+                        làm 3 loại dựa vào hàm lượng chất béo có trong sản phẩm: váng sữa có hàm lượng chất béo cao nhất
+                        (35-50% chất béo), váng sữa thông thường (10-30% chất béo), váng sữa nguyên kem (6-15% chất béo). <a href="#">Xem chi tiết</a></p>
+                </section>
+
+                
+                <h1>Góc Thành Viên</h1>
+
+                <!--section 2-->
+                <section class="image-right">
+                    <h2> Sữa Chua Nhà Làm</h2>
+                    <video class="round-figure" width="320" height="240" controls="controls">
+                        <source src="images/trangchu/yogurt.mp4">
+                    </video> 
+                    <p class="detail">Học làm sữa chua tại gia cùng chuyên gia.Trong thực đơn dinh dưỡng
+                        của các bà mẹ cho con trẻ và các thành viên trong gia đình đều không thể thiếu món sữa chua thơm
+                        ngon, hấp dẫn và cực kì tốt cho sức khỏe này. Tuy nhiên, đa phần đều chọn mua sữa chua công nghiệp
+                        đã được đóng hộp bán sẵn tại các siêu thị và cửa hàng hơn là sữa chua tự làm tại nhà. Như vậy, liệu sữa
+                        chua nhà làm và sữa chua công nghiệp thì loại nào tốt sức khỏe của chúng ta hơn? Nếu là một người
+                        yêu thích nấu ăn bạn sẽ chọn sữa nhà làm hay mua sữa chua công nghiệp bên ngoài. Sữa chua nhà làm
+                        đảm bảo về độ an toàn, chất lượng cũng như giá thành rẻ. <a href="#">Xem chi tiết</a></p>
+                </section>
+ 
+                <!--section 3-->
+                <section>
+                    <h2>Hướng Dẫn Làm Sữa Chua Không Đường</h2>
+                    <div class="col_list">
+                        <h3>Nguyên liệu làm sữa chua không đường</h3>
+                        <ul>
+                            <li>1 lít sữa tươi không đường.</li>
+                            <li>1 hộp sữa chua men cái không đường (bạn có thể mua sữa chua đóng hộp không đường như Vinamilk, TH True Milk,...</li>
+                            <li>dụng cụ nấu và ủ sữa chua.</li>
+                        </ul>
+                        <h3 class="break-column">Các bước thực hiện</h3>
+                        <ol>
+                            <li>Cho sữa chua không đường vào nồi, đun nóng lên và khuấy đều, nhẹ tay theo 1 chiều. Tới khi sữa
+                                đạt khoảng 40 độ C thì tắt bếp. Bạn có thể dùng tay để kiểm tra, thấy sữa ấm vừa phải là được. </li>
+
+                            <li>Đổ hộp sữa chua làm men cái vào và khuấy đều, múc vào hũ và đem đi ủ 6-8 tiếng.</li> 
+
+                            <li>Sau khi ủ xong, bạn có thể dùng 1 hũ sữa chua vừa ủ để ăn thử, nếu thấy đạt vị sữa chua rồi có thể
+                                bảo quản trong ngăn mát tủ lạnh và thưởng thức dần nhé.</li>
+                        </ol>
+                    </div>
+                    
+                </section>
+
+                <!--section 4-->
+                <section>
+                    <h2>Đặt Hàng Ngay</h2>
+                    <div class="order">
+                        <div class="orther div">
+                            <img src="images/trangchu/order_1.png" width="100px" >
+                            <p>Gọi Điện</p>
+                        </div>
+                        
+                        <div>
+                            <img src="images/trangchu/order_2.png" width="100px">
+                            <p>Đặt Hàng</p>
+                        </div>
+                        
+                        <div>
+                            <img src="images/trangchu/order_3.png" width="100px">
+                            <p>Giao Hàng</p>
+                        </div>
+                        
+                        <div>
+                            <img src="images/trangchu/order_4.png" width="100px">
+                            <p>Thanh Toán</p>
+                        </div>
+                    </div>
+                    
+                </section>
+            </article>
+        </main>
+
+        <!--footer-->
+        <footer>
+            <p>
+                &copy; 2021 Bản quyền thuộc về FreeezeVN.
+                
+                    <a href="#" class="social-icon "><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa  fa-twitter-square"></i></a> 
+                    <a href="#" class="social-icon"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#logo" class="gotop"> <img src="images/top.png" alt="" width="60"></a>
+              
+            <p>
+        </footer>
+        <script>
+        /**************************************LAB 4****************************************/
+        //Tạo thông báo khuyến mãi website
+        var d = new Date();
+        var ads="Khách hàng có ngày sinh trong tháng "+d.getMonth()+" sẽ được tặng 2 phần sữa chua dâu cho đơn hàng đầu tiên trong tháng.";
+
+        $(document).ready(function(){
+            $("footer").append( "<div id='adscontainer'><span id='adstext'> <h2>"+ads+"</h2></span></div>");
+            var wm = ($(window).width()-$("main").width())/2;
+            if(wm >= 200){adsVerEffect();}
+            else{adsHorEffect();}
+            headlineEffect();
+        });
+        //Quang cao cuon doc man hinh
+        function adsVerEffect(){
+            $("#adscontainer").addClass("adstopcontainer container");
+            $("#adscontainer").css("width",($(window).width()-$("main").width())/2);
+            $("#adstext").addClass("adstoptext adstext");
+            $("#adstext").css('top', $('#adscontainer').height());
+            $("#adstext").animate({
+                top: '-='+($('#adscontainer').height()+$('#adstext').height())
+            },30000,function(){adsVerEffect();});
+        }
+        //Quang cao cuon ngang man hinh
+        function adsHorEffect(){
+            $("#adscontainer").addClass("adsleftcontainer container");
+            $("#adscontainer").css("left", $("main").position().left);
+            $("#adscontainer").css("width",$("main").width());
+            $("#adstext").addClass("adslefttext adstext");
+            $("#adstext").css('left', $('#adscontainer').width());
+            $("#adstext").animate({
+                left: '-='+($('#adscontainer').width()+$('#adstext').width())
+            },30000,function(){adsHorEffect();});
+        }
+        //Tin nổi bật ở trang chủ
+        var headlineContent = [
+            {   "title": "Bánh flan sữa chua - sự kết hợp hoàn hảo",
+                "photo": "images/trangchu/headline/headline1.jpg"},
+            {   "title": "Sữa chua làm từ sữa dê - đậm đà hương vị khó quên",
+                "photo": "images/trangchu/headline/headline2.jpg"},
+            {   "title": "Thưởng thức sữa chua theo cách của bạn",
+                "photo": "images/trangchu/headline/headline3.jpg"}
+        ];
+        function init(){
+            for(var i = 0; i<headlineContent.length;i++){
+                var item = headlineContent[i];
+                var thediv = $("<div>");
+                $("<span> <h3>"+item.title+"</h3> </span>").appendTo(thediv);
+                $("<img src='"+item.photo+"'>").appendTo(thediv);
+                $("#headline").append(thediv);
+            }
+        }
+        function headlineEffect(){
+            init();
+            $('#headline > div:gt(0)').hide();
+            setInterval(function(){
+                $('#headline > div:first')
+                .hide()
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#headline');
+            }, 5000);
+        }
+        </script>
+        
+    </body>
+</html>

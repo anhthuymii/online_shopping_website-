@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Giới Thiệu</title>
+        <link rel="shortcut icon" href="images/favicon.ico"
+                type="image/vnd.microsoftt.icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" ></script>
+        <script>
+            window.onload=function(){
+                showSearch();
+            };
+        </script>
+        <script>
+            window.onstorage = () => {
+            showCart();
+            };
+        </script>
+    </head>
+    <body>
+        <!--header-->
+        <header>
+            <img id="header-img1" src="images/header-img1.png" alt="">
+            <img id="header-img2" src="images/header-img2.png" alt="">
+            <img id="header-img3" src="images/header-img3.png" alt="">
+            <a href="trangchu.html"><img id="logo" src="images/logo.png" width="15%"></a>
+            <!--nav-->
+            <nav>
+                <a href="trangchu.html">Trang Chủ </a> 
+                <a href="gioithieu.html">Giới Thiệu </a> 
+                <a href="sanpham.html">Sản Phẩm </a> 
+                <a href="tintuc.html">Tin Tức </a> 
+                <a href="dangnhap.html">Đăng Nhập </a> 
+                <a href="dangky.html">Đăng Ký </a> 
+                <a href="lienhe.html">Liên Hệ </a> 
+                <div class="search">
+                    <form method="get" name="frm-search" action="timkiem.html">
+                        <div id="input-container">
+                            <input id="search" class="saerch-input" type="text" placeholder="Nhập nội dung cần tìm" name="words" onkeypress="checkKeySearch(e)">
+                            <i class="fa fa-search icon-white" onclick="doSearch()" ></i>
+                            <i class="fa fa-shopping-cart icon-pink" onclick="openCart()"></i>
+                         
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--main-->
+        <main >
+            <div>
+                <div class="trai">
+                <h1>Giới Thiệu</h1>
+                <img src="images/gioithieu/bg-header-about.jpg" alt="gioithieu">
+                <h1>Câu Chuyện Thương Hiệu</h1>
+                <p>Khi dự án "Sữa chua trân châu" được đặt lên bàn, có rất nhiều câu hỏi bủa vây lấy chúng tôi: Làm sao đê nhân bản một món ăn “đặc sản”
+                    nhưng vẫn đảm bảo chất lượng cho từng sản phâm? Liệu rằng đây có phải mô hình phát triên bền vững hay chỉ là “cơn sốt” hạ nhiệt theo
+                    thời gian? Làm thế nào đê tạo tính khác biệt giữa rất nhiềuthương hiệu? Có muôn vàn khó khăn, thử thách khi xây dựng thương hiệu đê
+                    khiến chúng tôi chùn bước. Nhưng chỉ cân một lý do đủ mạnh đê tiếp tục, lý do mà chúng tôi bắt đâu.</p>
+                <h1>Thực Hiệu Ước Mơ</h1>
+
+                <p>Anh Phạm Tuấn, được sinh ra trong gia đình có truyền thống làm sữa chua trân châu từ những năm 1990. Món ăn thơm ngon này đã nuôi
+                    đường tuôi thơ anh và trở thành niềm nhớ thân thương mỗi khi anh xa nhà. Không chỉ đối với riêng anh Tuấn, sữa chua trân châu đã len lỏi
+                    vào từng ngð ngách thành phó, trở thành món ăn vặt thân thuộc trong tiềm thức của người dân nơi đây. Đã từ lâu, anh luôn ước mơ nhân
+                    bản món ăn này, không chỉ đừng lại ở dải đất chữ S, mà còn vươn ra thị trường quôc tế đê giới thiệu với bạn bẻ năm châu về tỉnh hoa âm.
+                    thực quê hương. Nhưng ước mơ áy chỉ thật sự bắt đầu khi anh gặp hai người bạn đồng hành thân thiết sau này. Anh Lê Thanh và anh
+                    Nguyễn Minh là hai người bạn thuở thiếu thời. Vào một ngày mùa hè, hai anh có dịp ghé thăm anh Tuần, thưởng thức sữa chua trân châu .
+                    Cuộc gặp gỡ tình cờ này là khởi nguôn ý tưởng của hệ thông Sữa chua trân châu, mà cho tới giờ hay gọi vui với nhau là “cuộc gặp gỡ ngàn
+                    #ÿ”. Ba chàng trai trẻ năm ấy, dù mới chỉ gặp mà tưởng như đã thân quen từ lâu. Họ cùng chung lý tưởng sống, cùng "phải lòng" với sữa
+                    chua trân châu, cùng một ước mơ biến món ăn địa phương này trở thành niềm tự hào dân tộc.</p>
+                <h1>Những Khởi Đầu Thuận Lợi 
+
+                </h1>
+                
+                <p>Khác với nhiều thương hiệu F&B có khởi đầu không mấy dễ dàng, Sữa chua trân châu lại được khách hàng đón nhận và ủng hộ ngay từ khi
+                    ra mắt cửa hàng đầu tiên. Chỉ sau hơn 3 tháng phát triển, thương hiệu Sữa chua trân châu đã có trên 30 cửa hàng trên khắp thủ đô và cho.
+                    đến nay là 250 cửa hàng trên khắp cả nước. Điều gì đã làm nên sự thành công của thương hiệu? Không phải may mắn. Mọi mô hình phát
+                    triên bền vững đều xuất phát từ sản phâm. Chúng tôi chọn sữa chua trâu châu, không đơn thuần vì đây là một món ăn truyền thống của gia
+                    đình, mà còn bởi sức tiềm năng của sản phâm đã được người dân đón nhận qua hàng chục năm. Bên cạnh đó, đê chuân hoá và nhân bản một
+                    sản phẩm mắt rất nhiều thời gian, nguồn lực và chỉ phí. Một sai sót nhỏ trong công thức món ăn hay quy trình sản xuất cũng có thê phải
+                    “đập đi xây lại” từ đầu. Chỉ khi giữ được nguyên bản hương vị, đồng thời, làm giàu hàm lượng dinh dưỡng trong từng sản phâm, chúng tôi
+                    mới đủ tự tin đề giới thiệu đến khách khách hàng. Có lẽ vì thế, thương hiệu Sữa chua trân châu đã chỉnh phục được tất cả các khách hàng, từ
+                    em bé đến phụ huynh, từ các bạn trẻ đến cả những người lớn tuôi.</p>
+                </div>
+                    <div class="phai">
+                <h1>Hãy Đăng Ký Thành Viên Ngay Trong Hôm Nay </h1>
+                <p>Thành viên được hưởng nhiều ưu đi: tham gia khóa học miễn phí, tham gia các cuộc thi, nhận tài liệu các món mới...</p>
+            </div>
+        </div>
+        </main>
+
+        <!--footer-->
+        <footer>
+            <p>
+                &copy; 2021 Bản quyền thuộc về FreeezeVN. 
+                <b>
+                    <a href="#" class="social-icon "><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa  fa-twitter-square"></i></a> 
+                    <a href="#" class="social-icon"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#logo" class="gotop"> <img src="images/top.png" alt="" width="60"></a>
+                </b>
+            </p>
+            </p>
+        </footer>
+    </body>
+</html>
